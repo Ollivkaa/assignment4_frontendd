@@ -1,0 +1,150 @@
+:root {
+  --green: #0F6B5F;
+  --amber: #F2A93B;
+  --ink: #16302B;
+  --field: #F4F7F5;
+  --line: #E6EFEC;
+  --bs-body-font-family: "Montserrat", system-ui, sans-serif;
+  --bs-body-color: var(--ink);
+  --bs-body-font-size: 0.875rem;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  background: var(--line);
+  color: var(--ink);
+}
+
+.ticket {
+  border: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(22, 48, 43, 0.16);
+}
+.ticket-header {
+  background: var(--green);
+  color: #fff;
+  padding: 1.4rem 1.75rem;
+}
+.ticket-header h1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.ticket-body {
+  padding: 1.75rem;
+  background: #fff;
+}
+.form-control,
+.form-select {
+  background-color: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+.form-control::placeholder {
+  color: #7a8f8a;
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.18);
+}
+.form-floating > label {
+  color: #6b7f7a;
+  font-size: 0.8rem;
+}
+.form-label,
+legend.form-label {
+  display: block;
+  float: none;
+  width: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+.form-check-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.2);
+}
+.form-check-label {
+  font-size: 0.8rem;
+}
+
+.trip-toggle {
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+.trip-toggle .btn {
+  border: 0;
+  border-radius: 0;
+  color: var(--green);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 1.25rem;
+}
+.trip-toggle .btn-check:checked + .btn {
+  background: var(--green);
+  color: #fff;
+}
+.trip-toggle .btn-check:focus-visible + .btn {
+  outline: 3px solid var(--amber);
+  outline-offset: -3px;
+}
+
+
+.prefix {
+  background: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 0.75rem 0 0 0.75rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.input-group > .form-control {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.btn-find,
+.btn-clear {
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.6rem 1.75rem;
+}
+.btn-find {
+  background: var(--amber);
+  border: 1px solid var(--amber);
+  color: var(--ink);
+}
+.btn-find:hover,
+.btn-find:focus-visible {
+  background: #e49a2a;
+  border-color: #e49a2a;
+  color: var(--ink);
+}
+.btn-clear {
+  background: #fff;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.btn-clear:hover,
+.btn-clear:focus-visible {
+  background: var(--line);
+  color: var(--ink);
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.3);
+}
+
+@media (max-width: 575.98px) {
+  .ticket-body { padding: 1.25rem; }
+  .ticket-header { padding: 1.1rem 1.25rem; }
+}
