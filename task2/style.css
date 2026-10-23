@@ -1,5 +1,95 @@
-/* :user-invalid / :user-valid match only after the user has changed
-   (or tried to submit) a field, so a fresh page shows no errors. */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1c2233;
+  --muted: #6b7489;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --border: #dfe3ee;
+  --radius: 14px;
+}
+
+body {
+  background:
+    radial-gradient(900px 400px at 10% -10%, rgba(79, 70, 229, 0.14), transparent 60%),
+    radial-gradient(800px 400px at 100% 0%, rgba(14, 165, 233, 0.12), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+
+main .col-12.col-lg-10 {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 1.25rem;
+  box-shadow: 0 10px 40px rgba(28, 34, 51, 0.08);
+}
+
+@media (min-width: 768px) {
+  main .col-12.col-lg-10 {
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 0.6rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--primary), #0ea5e9);
+}
+
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  padding: 0.6rem 0.8rem;
+  background-color: #fbfcff;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.form-control:hover,
+.form-select:hover {
+  border-color: #c3c9db;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.18);
+}
+
+.form-control::placeholder {
+  color: #a3abbd;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.invalid-feedback {
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
 
 .form-control:user-invalid,
 .form-select:user-invalid {
@@ -12,6 +102,10 @@
 .form-control:user-valid,
 .form-select:user-valid {
   border-color: #198754;
+}
+.form-control:user-valid:focus,
+.form-select:user-valid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.2);
 }
 
 .form-control:user-invalid ~ .invalid-feedback,
@@ -29,7 +123,81 @@
   color: #dc3545;
 }
 
+
 legend.form-label {
   float: none;
   width: auto;
+}
+
+fieldset.field {
+  border: 1.5px dashed var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem 0.6rem;
+  margin-top: 1rem;
+}
+
+fieldset.field legend.form-label {
+  padding: 0 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-check-input {
+  width: 1.15em;
+  height: 1.15em;
+  border: 1.5px solid #b8c0d4;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.18);
+  border-color: var(--primary);
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  transition: transform 0.12s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  border: none;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.38);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline-secondary {
+  border-width: 1.5px;
+}
+
+@media (max-width: 575.98px) {
+  .btn {
+    width: 100%;
+  }
+  .btn.ms-2 {
+    margin-left: 0 !important;
+    margin-top: 0.5rem;
+  }
 }
